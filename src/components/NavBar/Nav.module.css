@@ -1,0 +1,19 @@
+.div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f2f2f2;
+}
+
+.link {
+  text-decoration: none;
+  color: #333;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+  padding: 8px;
+}
+
+.link:hover {
+  color: #000;
+  background-color: #4455b4;
+}
