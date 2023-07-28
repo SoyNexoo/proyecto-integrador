@@ -26,9 +26,7 @@
 //   });
 
 const express = require("express")
-const characterRouter = require("./routes/character")
-const userRouter = require("./routes/user")
-const favoriteRouter = require("./routes/favorites")
+const router = require("./routes/index")
 const server = express()
 
 
@@ -53,8 +51,8 @@ server.use((req, res, next) => {
 // Permisos -> CORS 
 
 // Routers
-server.use("/characters", characterRouter)
-server.use("/user", userRouter)
-server.use("/favorites" , favoriteRouter)
+server.use("/characters", router)
+server.use("/user", router)
+server.use("/favorites" , router)
 
 module.exports = server

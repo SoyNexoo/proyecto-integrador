@@ -1,7 +1,7 @@
 import { connect, useDispatch, useSelector } from "react-redux";
 import Card from "../Card/Card";
 import s from "./favorites.module.css"
-import { filterCards, orderCards } from "../../redux/action";
+import { filterCards, orderCards, showAll } from "../../redux/action";
 import { useState } from "react";
 
 function Favorites(){
@@ -18,7 +18,15 @@ function Favorites(){
         setBoolean(!boolean)
     }
     function handleFilter(event){
-        dispatch(filterCards((event.target.value)))
+        // dispatch(filterCards((event.target.value)))
+
+        const selectedValue = event.target.value;
+        console.log(selectedValue)
+        if(selectedValue === "NONE"){
+          dispatch(showAll())
+        }else{
+          dispatch(filterCards(selectedValue))
+        }
     }
 
     return (
@@ -30,6 +38,7 @@ function Favorites(){
             </select>
     
             <select onChange={handleFilter}>
+              <option value="NONE">NONE</option>
               <option value="unknown">UNKNOWN</option>
               <option value="genderless">GENDERLESS</option>
               <option value="Female">FEMALE</option>

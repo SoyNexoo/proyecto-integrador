@@ -9,7 +9,7 @@ const Detail = () => {
   const [character, setCharacter] = useState({});
 
   useEffect(() => {
-    axios(`http://localhost:3001/detail/${id}`).then(
+    axios(`http://localhost:3001/characters/${id}`).then(
       (response) => {
         if (response.data.name) {
           console.log(response)

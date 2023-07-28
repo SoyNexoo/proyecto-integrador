@@ -44,7 +44,7 @@ function Card({
          setIsFav(true);
       }
    });
-}, [favorites]);
+}, [favorites, id]);
 
 
   return (

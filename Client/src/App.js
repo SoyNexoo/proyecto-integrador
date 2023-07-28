@@ -31,13 +31,16 @@ function App() {
     }
 
 
-    axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
-       const { access } = data;
-       setAccess(data);
-       access && navigate('/home');
-    });
+    // axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+    //    const { access } = data;
+    //    setAccess(data);
+    //    access && navigate('/home');
+    // });
  }
  
+ function logOut () {
+  setAccess(false)
+ }
 
   useEffect(() => {
     !access && navigate("/");
@@ -76,7 +79,7 @@ function App() {
 
   return (
     <div className="App">
-      {location.pathname !== "/" && <Nav onSearch={onSearch} />}
+      {location.pathname !== "/" && <Nav onSearch={onSearch} logOut={logOut} />}
       {/* <Nav onSearch={onSearch} /> */}
       {/* <Cards  /> */}
       <Routes>

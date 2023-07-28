@@ -1,4 +1,4 @@
-import { ADDFAVORITE, DELETEFAVORITE, ORDER, FILTER } from "./types"
+import { ADDFAVORITE, DELETEFAVORITE, ORDER, FILTER, SHOWALL } from "./types"
 import axios from "axios";
 
 //! ACTIONS CREATORS
@@ -49,4 +49,8 @@ export function filterCards(gender){
 
 export function orderCards(order){
     return {type: ORDER, payload: order}
+}
+
+export function showAll(){
+   return {type: SHOWALL}
 }
